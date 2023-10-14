@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { computed, ref, watch, watchEffect } from 'vue'
+import { useUserStore } from '../stores/UserStore'
+
+    const userStore = useUserStore();
 
     const search = ref('')
     const names = ref(['mario', 'yoshi', 'luigi', 'toad', 'bowser', 'koopa', 'peach'])
