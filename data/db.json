@@ -1,7 +1,51 @@
 {
-    "jobs": [
-        {"id": 1, "title": "Software Engineer", "desc": "Senior Software Engineer needed"},
-        {"id": 2, "title": "UX/UI Designer", "desc": "Junior UX/UI Designer needed"},
-        {"id": 3, "title": "AI Engineer", "desc": "Senior AI Engineer needed"}
-    ]
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Software Engineer",
+      "desc": "Senior Software Engineer needed"
+    },
+    {
+      "id": 2,
+      "title": "UX/UI Designer",
+      "desc": "Junior UX/UI Designer needed"
+    },
+    {
+      "id": 3,
+      "title": "AI Engineer",
+      "desc": "Senior AI Engineer needed"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "marshmallow",
+      "firstname": "Marwan",
+      "lastname": "Samih",
+      "email": "marwan@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": 2,
+      "username": "shogun",
+      "firstname": "Youssef",
+      "lastname": "Ossama",
+      "email": "youssef@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": 3,
+      "email": "kaynoid@gmail.com",
+      "password": "12345",
+      "gender": "male",
+      "technologies": [
+        "ASP.NET",
+        "NodeJS"
+      ],
+      "position": "embedded",
+      "skills": [
+        "Full-Stack"
+      ]
+    }
+  ]
 }

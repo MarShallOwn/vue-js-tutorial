@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { reactive, ref, watch } from 'vue'
+import { useRouter } from "vue-router";
+import { getUsersAPI, registerUserAPI } from '../service/index'
+
+const route = useRouter();
 
 type formDataType = {
+    id: number | null,
     email: string,
     password: string,
     gender: string,
@@ -13,6 +18,7 @@ type formDataType = {
 const currentSkill = ref<string>("")
 
 const formData = reactive<formDataType>({
+    id: null,
     email: "",
     password: "",
     gender: "male",
@@ -36,10 +42,27 @@ const handleAddingSkills = (e: Event) => {
 const removeSkill = (removedSkill: string) => {
     formData.skills = formData.skills.filter((skill: string) => skill !== removedSkill);
 }
+
+const submitForm = async () => {
+    try {
+        const getUsers = (await getUsersAPI()).data as any[];
+        const getLastUserId: number = getUsers[getUsers!.length - 1].id;
+        formData.id = getLastUserId + 1;
+        const result = await registerUserAPI(formData);
+
+        if(result.status === 201) {
+            route.push({name: "Home"})
+        } else {
+            console.log("Error happened")
+        }
+    } catch (err) {
+        console.log("Something went wrong")
+    }
+}
 </script>
 
 <template>
-    <div class="container">
+    <form class="container" @submit.prevent="submitForm">
         <label>Email</label>
         <input type="text" v-model="formData.email" />
 
@@ -76,7 +99,9 @@ const removeSkill = (removedSkill: string) => {
         <div class="skills-container">
             <span  v-for="skill in formData.skills" :key="skill" class="skill-tag" @click="removeSkill(skill)">{{ skill }}</span>
         </div>
-    </div>
+
+        <button type="submit">Register</button>
+    </form>
 </template>
 
 <style scoped>
