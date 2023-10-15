@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { reactive } from 'vue'
-import { getUserAPI } from '../service/index';
+import { getUserByEmailAPI } from '../service/index';
+import { useUserStore } from '../stores/UserStore';
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
+const userStore = useUserStore();
 
 type formDataType = {
     email: string,
@@ -14,11 +19,14 @@ const formData = reactive<formDataType>({
 
 const submitForm = async () => {
     try {
-        const getUser = (await getUserAPI()).data as any;
-        const getLastUserId: number = getUsers[getUsers!.length - 1].id;
+        const result = await getUserByEmailAPI(formData.email);
 
-        if(result.status === 201) {
-            route.push({name: "Home"})
+        if(result.status === 200) {
+            const user = result.data as any;
+            if(user[0].password === formData.password) {
+                userStore.loginUser(formData);
+                router.push({name: "Home"});
+            }
         } else {
             console.log("Error happened")
         }
