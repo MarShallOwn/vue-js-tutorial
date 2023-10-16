@@ -12,21 +12,27 @@ const handleLogout = () => {
 
 <template>
     <div class="nav">
-        <router-link to="/">Home</router-link>
-        <router-link :to="{ name: 'Register' }">Register</router-link>
-        <router-link :to="{ name: 'Login' }">Login</router-link>
-        <router-link :to="{ name: 'Jobs' }">Jobs</router-link>
-
-
         <div v-if="userStore.isLoggedIn">
            <p>hello {{ userStore.user && userStore.user.email }}</p> 
+           <router-link :to="{ name: 'Profile' }">Profile</router-link>
            <button @click="handleLogout">logout</button>
+        </div>
+        <div v-else>
+            <router-link to="/">Home</router-link>
+            <router-link :to="{ name: 'Register' }">Register</router-link>
+            <router-link :to="{ name: 'Login' }">Login</router-link>
+            <router-link :to="{ name: 'Jobs' }">Jobs</router-link>
         </div>
     </div>
 </template>
 
 <style scoped>
 .nav {
+    display: flex;
+    column-gap: 10px;
+}
+
+.nav div {
     display: flex;
     column-gap: 10px;
 }

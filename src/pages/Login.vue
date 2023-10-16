@@ -25,7 +25,7 @@ const submitForm = async () => {
             const user = result.data as any;
             if(user[0].password === formData.password) {
                 userStore.loginUser(formData);
-                router.push({name: "Home"});
+                router.push("/");
             }
         } else {
             console.log("Error happened")
