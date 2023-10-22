@@ -38,14 +38,40 @@
       "email": "kaynoid@gmail.com",
       "password": "12345",
       "gender": "male",
-      "technologies": [
-        "ASP.NET",
-        "NodeJS"
-      ],
+      "technologies": ["ASP.NET", "NodeJS"],
       "position": "embedded",
-      "skills": [
-        "Full-Stack"
-      ]
+      "skills": ["Full-Stack"]
+    }
+  ],
+  "sections": [
+    {
+      "pageName": "ddfgfgfhg",
+      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnuFLSXB-FwyyI6IqJqRpFmwKUpKA--pwYeMcyf36R&s",
+      "section": {
+        "sectionTypesId": 2,
+        "pageSectionSort": 10,
+        "pageSectionName": "dfdffgf"
+      }
+    },
+
+    {
+      "pageName": "ddfgfgfhg",
+      "imageURL": "https://wallpapers.com/images/featured/4k-nature-ztbad1qj8vdjqe0p.jpg",
+      "section": {
+        "sectionTypesId": 4,
+        "pageSectionSort": 1,
+        "pageSectionName": "dfdffgf"
+      }
+    },
+
+    {
+      "pageName": "ddfgfgfhg",
+      "imageURL": "https://img.freepik.com/free-photo/digital-lavender-natural-landscape_23-2150538378.jpg",
+      "section": {
+        "sectionTypesId": 2,
+        "pageSectionSort": 5,
+        "pageSectionName": "dfdffgfgfgf"
+      }
     }
   ]
 }
