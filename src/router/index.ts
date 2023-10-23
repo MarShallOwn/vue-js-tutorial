@@ -5,6 +5,7 @@ import Login from "../pages/Login.vue"
 import Jobs from "../pages/Jobs.vue"
 import Profile from "../pages/Profile.vue"
 import JobDetails from "../pages/JobDetails.vue"
+import Blog from "../pages/Blog.vue"
 import NotFound from "../components/NotFound.vue"
 import { protectedRoutes } from "../constant/protectedRoutes"
 import { useUserStore } from "../stores/UserStore"
@@ -34,6 +35,11 @@ const systemRoutes = [
         name: "JobDetails",
         path: "/jobs/:id",
         component: JobDetails
+    },
+    {
+        name: "blog",
+        path: "/blogs/:id",
+        component: Blog
     },
     {
         name: "Profile",
